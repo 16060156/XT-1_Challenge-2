@@ -1,0 +1,654 @@
+/* ----- Global styles ----- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    background-color: #FFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* ----- Text styles -----*/
+
+p {
+	font-size: 1em;
+	font-weight: 400;
+	color: #252525;
+	font-style: normal;
+	margin: 0px 0px 0rem 0px;
+	line-height: 1.4em;
+}
+
+.ul-openingstijden > li {
+	line-height: 1.4em;
+	font-size: 1em;
+}
+
+h1 {
+	font-size: 1.125em;
+	font-weight: 700;
+	color: #FFF;
+	margin: 0px 0px 0.625rem 0px;
+	line-height: 1.4em;
+}
+
+h2 {
+	font-size: 1em;
+	font-weight: 500;
+	color: #227B3C;
+	margin: 0px 0px 0.625rem 0px;
+	line-height: 1.4em;
+}
+
+.text-white {
+	color: #FFF;
+}
+
+.p-copyright {
+	font-size: 0.875em;
+	margin: 20px 0px 0px;
+}
+
+a {
+	text-decoration: none;
+	font-size: 1em;
+	line-height: 1.4em;;
+}
+
+/* ----- Button styles -----*/
+
+input[type="button"] {
+	background-color: #F8D62C;
+	border: none;
+	color: #252525;
+	font-size: 1em;
+	font-weight: 700;
+	padding: 0 0;
+	text-align: center;
+	text-decoration: none;
+	width: 304px;
+	height: 40px;
+}
+
+.hamburger div {
+	background-color: #252525; 
+	height: 2px;
+	width: 25px;
+	margin: 5px;
+}
+
+/* ----- Horizontal line style -----*/
+
+/* Green horizontal line in footer */
+hr {
+	margin: 20px auto;
+	border: 1px solid #227B3C;
+	width: 100%;
+}
+
+/* ----- Lay-out -----*/
+
+/* 4 column grid: 64px column width, 16px gutter width */
+.grid-1 {
+	display: grid;
+	height: auto;
+	padding: 0px 35.5px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 52px 160px 320px 221px 199px 177px 140px 184px 173px 143px 375px;
+	grid-gap: 0px 16px;
+}
+
+/* Menu bar */
+.header {
+	grid-column: 1/5;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav {
+	display: none;
+}
+
+/* Hero image / header image */
+.hero-image {
+	grid-column: 1/5;
+	background-image: url("images/hero_img.jpg");
+	background-size: cover; /* Resize the background image to cover the entire container */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #F5F5F5; /* Used if the image is unavailable */
+}
+
+/* Introduction text + CTA button 'Online bestellen' */
+.intro-text {
+	grid-column: 1/5;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.intro-text p {
+	margin-bottom: 50px;
+}
+
+/* Unique selling point "Elke dag vers brood" */
+.usp-one {
+	grid-column: 1/5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Background: unique selling point "Elke dag vers brood" */
+.background-one {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/usp-one.jpg"); /* Tinting the image for better readability by using tb-bt-gradients */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #F5F5F5;
+}
+
+/* Unique selling point "Dagelijks vers fruit" */
+.usp-two {
+	grid-column: 1/5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Background: unique selling point "Dagelijks vers fruit" */
+.background-two {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/usp-two.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #F5F5F5;
+}
+
+/* Unique selling point "Iedere dag vers beleg" */
+.usp-three {
+	grid-column: 1/5;
+	background-color: green;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Background: unique selling point "Iedere dag vers beleg" */
+.background-three {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/usp-three.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #F5F5F5;
+}
+
+/* Call-to-action button 'Online bestellen' */
+.cta-two {
+	grid-column: 1/5;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+/* Section 'Openingstijden' */
+.openingstijden {
+	grid-column: 1/5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ul-openingstijden {
+	list-style-type: none;
+	margin: 0; /* Removing browser default settings */
+	padding: 0; /* Removing browser default settings */
+}
+
+/* Opening days and hours positioning */
+.wrapper-openingstijden {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* Section 'Contactinformatie' */
+.contactinformatie {
+	grid-column: 1/5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Section 'Adres' */
+.adres {
+	grid-column: 1/5;
+}
+
+/* Section 'Footer' */
+.footer {
+	grid-column: 1/5;
+	background-color: #F5F5F5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.footer a {
+	margin-bottom: 10px;
+}
+
+/* Top side footer (above green horizontal line) */
+.footer-top {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Bottom side footer (below green horizontal line) */
+.footer-bottom {
+	text-align: center;
+}
+
+/* ------------------------- Tablet (min-width 768px) ------------------------- */
+@media only screen and (min-width: 768px) {
+
+	/* ----- Text styles -----*/
+
+p {
+	font-size: 1em;
+	margin: 0px 0px 0rem 0px;
+}
+
+.ul-openingstijden > li {
+	font-size: 1em;
+}
+
+h1 {
+	font-size: 1.125em;
+	margin: 0px 0px 0.625rem 0px;
+}
+
+h2 {
+	font-size: 1em;
+	margin: 0px 0px 0.625rem 0px;
+}
+
+.p-copyright {
+	margin: 0px 0px 0px;
+}
+
+a {
+	font-size: 1em;
+}
+
+/* ----- Button styles -----*/
+
+input[type="button"] {
+	font-size: 1em;
+	width: 160px;
+}
+
+.hamburger div {
+	display: none;
+}
+
+/* ----- Horizontal line style -----*/
+
+hr {
+	margin: 20px auto;
+}
+
+/* ----- Lay-out -----*/
+
+/* 12 column grid: 40px column width, 20px gutter width */
+.grid-1 {
+	display: grid;
+	height: auto;
+	padding: 0px 34px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 80px 320px 226px 226px 226px 325px 0px 162px;
+	grid-gap: 0px 20px;
+}
+
+.header {
+	grid-column: 1/13;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav {
+	display: block;
+}
+
+/* Not able to get the hero-image to show after putting intro-text above it by making hero-image position:absolute; */
+.hero-image {
+	grid-column: 1/13;
+	position: absolute;
+}
+
+.intro-text {
+	grid-column: 2/7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: transparent;
+}
+
+.intro-text p {
+	margin-bottom: 20px;
+}
+
+.usp-one {
+	grid-column: 1/13;
+	padding-left: 60px; /* Must use padding-left, because I don't know how to place the image outside grid */
+}
+
+.usp-two {
+	grid-column: 1/13;
+	padding-left: 60px;
+}
+
+.usp-three {
+	grid-column: 1/13;
+	padding-left: 60px;
+}
+
+.text-width p {
+	width: 75%;
+}
+
+.cta-two {
+	display: none;
+}
+
+.openingstijden {
+	grid-column: 2/6;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 50px;
+}
+
+.contactinformatie {
+	grid-column: 8/12;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 50px;
+}
+
+.adres {
+	grid-column: 8/11;
+	margin-top: -140px;
+}
+
+.footer {
+	grid-column: 1/13;
+	justify-content: center;
+}
+
+.footer a {
+	margin-bottom: 0px;
+}
+
+.footer-top {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer-bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+}
+
+/* ------------------------- Laptop (min-width 1366px) ------------------------- */
+@media only screen and (min-width: 1366px) {
+
+		/* ----- Text styles -----*/
+
+p {
+	font-size: 1.25em;
+}
+
+.ul-openingstijden > li {
+	font-size: 1.25em;
+}
+
+h1 {
+	font-size: 1.5em;
+	margin: 0px 0px 1.25rem 0px;
+}
+
+h2 {
+	font-size: 1.25em;
+	margin: 0px 0px 1.25rem 0px;
+}
+
+.p-copyright {
+	font-size: 1.125em;
+}
+
+a {
+	font-size: 1.25em;
+}
+
+/* ----- Button styles -----*/
+
+input[type="button"] {
+	font-size: 1.25em;
+	width: 196px;
+	height: 63px;
+}
+
+.hamburger div {
+	display: none;
+}
+
+/* ----- Horizontal line style -----*/
+
+hr {
+	margin: 20px auto;
+}
+
+/* ----- Lay-out -----*/
+
+/* 12 column grid: 86px column width, 24px gutter width */
+.grid-1 {
+	display: grid;
+	height: auto;
+	padding: 0px 35px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 103px 505px 323px 363px;
+	grid-gap: 0px 24px;
+}
+
+.header {
+	grid-column: 2/12;
+}
+
+/* Not able to get the hero-image to show after putting intro-text above it by making hero-image position:absolute; */
+.hero-image {
+	grid-column: 1/13;
+	position: absolute;
+}
+
+.intro-text {
+	grid-column: 2/7;
+}
+
+.usp-one {
+	grid-column: 1/5;
+}
+
+.usp-two {
+	grid-column: 5/9;
+}
+
+.usp-three {
+	grid-column: 9/13;
+}
+
+.text-width p {
+	/*width: 100%;*/
+}
+
+.cta-two {
+	display: none;
+}
+
+.openingstijden {
+	grid-column: 2/5;
+	margin-bottom: 50px;
+}
+
+.contactinformatie {
+	grid-column: 6/8;
+}
+
+.adres {
+	grid-column: 10/12;
+	margin-top: 50px;
+}
+
+.footer {
+	grid-column: 2/12;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#SPAR {
+	width: 85px;
+}
+}
+
+/* ------------------------- Desktop (min-width 1680px) ------------------------- */
+@media only screen and (min-width: 1680px) {
+
+		/* ----- Text styles -----*/
+
+p {
+	font-size: 1.375em;
+}
+
+.ul-openingstijden > li {
+	font-size: 1.375em;
+}
+
+h1 {
+	font-size: 1.625em;
+	margin: 0px 0px 1.25rem 0px;
+}
+
+h2 {
+	font-size: 1.375em;
+	margin: 0px 0px 1.25rem 0px;
+}
+
+.p-copyright {
+	font-size: 1.25em;
+}
+
+a {
+	font-size: 1.375em;
+}
+
+/* ----- Button styles -----*/
+
+input[type="button"] {
+	font-size: 1.5em;
+	width: 288px;
+	height: 70px;
+}
+
+.hamburger div {
+	display: none;
+}
+
+/* ----- Horizontal line style -----*/
+
+hr {
+	margin: 20px auto;
+}
+
+/* ----- Lay-out -----*/
+
+/* 12 column grid: 132px column width, 24px gutter width */
+.grid-1 {
+	display: grid;
+	height: auto;
+	padding: 0px 36px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 162px 505px 390px 373px 283px;
+	grid-gap: 0px 24px;
+}
+
+.header {
+	grid-column: 2/12;
+}
+
+/* Not able to get the hero-image to show after putting intro-text above it by making hero-image position:absolute; */
+.hero-image {
+	grid-column: 1/13;
+	position: absolute;
+}
+
+.intro-text {
+	grid-column: 2/6;
+}
+
+.usp-one {
+	grid-column: 1/5;
+}
+
+.usp-two {
+	grid-column: 5/9;
+}
+
+.usp-three {
+	grid-column: 9/13;
+}
+
+.text-width p {
+	width: 90%;
+}
+
+.cta-two {
+	display: none;
+}
+
+.openingstijden {
+	grid-column: 2/5;
+	margin-bottom: 50px;
+}
+
+.contactinformatie {
+	grid-column: 6/9;
+}
+
+.adres {
+	grid-column: 10/12;
+}
+
+.footer {
+	grid-column: 2/12;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#SPAR {
+	width: 130px;
+}
+}
